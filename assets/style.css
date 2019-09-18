@@ -4,6 +4,18 @@ nav {
     padding-left: 20px;
     font-family: 'Abril Fatface', cursive;
     text-shadow: 2px 2px black;
+    height: 85px;
+    
+    
+}
+
+
+.brand-logo {
+
+    font: xx-large;
+    color: black;
+
+
 }
 
 .page-footer {
@@ -30,7 +42,20 @@ nav {
 
     height: 90vh;
     background-color: white;
+    padding: 0;
 
+
+}
+
+h4 {
+
+    padding-bottom: 5px;
+    height: 20px;
+
+}
+
+
+#map  {
 
 }
 
@@ -38,4 +63,8 @@ nav {
     border: 10px color black;
     float: right;
     color: azure;
+
+    height: 657px; 
+    width: 100%; 
+
 }

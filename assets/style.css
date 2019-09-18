@@ -57,6 +57,14 @@ h4 {
 
 #map  {
 
+}
+
+.input-field {
+    border: 10px color black;
+    float: right;
+    color: azure;
+
     height: 657px; 
     width: 100%; 
+
 }

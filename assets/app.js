@@ -16,7 +16,9 @@ $("#submitButton").on("click", function (event) {
     address = $("#address").val().trim();
     console.log(address);
 
+
 var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
+
 $.ajax({
     url: queryURL,
     method: "GET"

@@ -24,6 +24,10 @@
                 console.log(state);
                 console.log(city);
                 console.log(zipCode);
+                $("#address").val("");
+                $("#state").val("");
+                $("#city").val("");
+                $("#zip_code").val("");
             })
         
 

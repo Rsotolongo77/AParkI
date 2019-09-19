@@ -29,6 +29,20 @@
                 $("#city").val("");
                 $("#zip_code").val("");
             })
+
+            // Take the values from search 
+            // Throw them into an ajax call api/places/Text
+            // Go through response into formated_address and get back...
+            // Geometry (lattitude and longitude)
+            // Set the lat and long into variables
+            // take that information and do another ajax call
+            // ajax call for api/places/nearby with a radius of 3000 and a "type: parking"
+            // Take that info and plug in into another ajax call for api/maps
+            // Find a way to create markers at the location
+
+
+
+
         
 
         

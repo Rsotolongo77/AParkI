@@ -10,27 +10,15 @@ function initMap() {
 initMap();
 
 let address;
-let state;
-let city;
-let zipCode;
 
 $("#submitButton").on("click", function (event) {
     event.preventDefault();
     address = $("#address").val().trim();
-    state = $("#state").val().trim();
-    city = $("#city").val().trim();
-    zipCode = $("#zip_code").val().trim();
     console.log(address);
-    console.log(state);
-    console.log(city);
-    console.log(zipCode);
-    $("#address").val("");
-    $("#state").val("");
-    $("#city").val("");
-    $("#zip_code").val("");
-})
 
-var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=Amway&inputtype=textquery&fields=name,geometry,formatted_address,icon";
+
+var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
+
 $.ajax({
     url: queryURL,
     method: "GET"
@@ -42,6 +30,9 @@ $.ajax({
     let lat = data.geometry.location.lat;
     let lng = data.geometry.location.lng;
 });
+
+$("#address").val("");
+})
 
             // Take the values from search 
             // Throw them into an ajax call api/places/Text

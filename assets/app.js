@@ -30,12 +30,17 @@ $("#submitButton").on("click", function (event) {
     $("#zip_code").val("");
 })
 
-var queryURL = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=Amway&inputtype=textquery&fields=name,geometry,formatted_address";
+var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=Amway&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 $.ajax({
     url: queryURL,
     method: "GET"
 }).then(function (response) {
-    console.log(response);
+    let data = response.candidates[0];
+    console.log(data.geometry.location);
+    console.log(data.geometry.location.lat);
+    console.log(data.geometry.location.lng);
+    let lat = data.geometry.location.lat;
+    let lng = data.geometry.location.lng;
 });
 
             // Take the values from search 

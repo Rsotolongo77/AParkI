@@ -8,4 +8,23 @@
             }
 
             initMap();
+
+            let address;
+            let state;
+            let city;
+            let zipCode;
+
+            $("#submitButton").on("click", function (event) {
+                event.preventDefault();
+                address = $("#address").val().trim();
+                state = $("#state").val().trim();
+                city = $("#city").val().trim();
+                zipCode = $("#zip_code").val().trim();
+                console.log(address);
+                console.log(state);
+                console.log(city);
+                console.log(zipCode);
+            })
+        
+
         

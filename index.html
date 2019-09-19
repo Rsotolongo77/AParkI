@@ -24,10 +24,7 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><i class="fas fa-car"></i>&nbsp;apARKi</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        
-      </ul>
+      <h3><i class="fas fa-car" style="font-size:40px;"></i>&nbsp;&nbsp;apARKi</h3>
     </div>
   </nav>
 
@@ -35,28 +32,43 @@
 
   <div class="row">
     <div class="col l4" id="smallcol">
-
+      <div class="container1">
+        
+        <div class="input-field">
+            <textarea class="input_fields materialize-textarea" id="address" type="text"></textarea>
+            <label class="active" for="address">Address</label>
+          </div>
+          <div class="input-field">
+            <input class="input_fields" id="state" type="text">
+            <label class="active" for="state">State</label>
+          </div>
+          <div class="input-field">
+            <input class="input_fields" id="city" type="text">
+            <label class="active" for="city">City</label>
+          </div>
+          <div class="input-field">
+            <input class="input_fields" id="zip_code" type="text">
+            <label class="active" for="zip_code">Zip Code</label>
+          </div>
+          <button class="btn waves-effect waves-light right" style="background-color: rgb(59, 58, 58)" type="submit" name="action">Submit
+              <i class="material-icons right">add_location</i>
+            </button>
+          
+        
+        </div>
     </div>
     <div class="col l8" id="largecol">
-      
+      <div id="map"></div>
+
     </div>
   </div>
-  
-  
 
-        <nav>
-                <div class="nav-wrapper">
-                  <a href="#" class="brand-logo"><i class="fas fa-car"></i>&nbsp;apARKi</a>
-                  <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="sass.html"></a></li>
-                    <li><a href="badges.html"></a></li>
-                    <li><a href="collapsible.html"></a></li>
-                  </ul>
-                </div>
-              </nav>
-    
-   
-  
+
+
+
+
+
+
   <footer class="page-footer" style="position:fixed;bottom:0;left:0;width:100%;">
     <div class="container">
       © 2019 Copyright GitItDone. inc
@@ -71,7 +83,7 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&callback=initMap"
     type="text/javascript"></script>
-
+  <script src="assets/javascript/app.js"></script>
 
 </body>
 

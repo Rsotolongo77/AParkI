@@ -1,26 +1,78 @@
 nav {
-
-    background-color: rgb(89, 149, 151);
+    /*rgb(89, 111, 151)*/
+    background-color: rgb(28, 46, 82);
     padding-left: 20px;
     font-family: 'Abril Fatface', cursive;
     text-shadow: 2px 2px black;
-    height: 85px;
+    height: 10vh;
+
+}
+   
+
+
+
+
+i  {
+
+color: rgb(107, 204, 172);
+    
+
+}
+
+
+
+h3 {
+
+    font-size: 35px;
+    color: white;
+    margin-top: 0;
+    margin-left: 30px;
+    
     
     
 }
 
 
-.brand-logo {
+.container1 {
 
-    font: xx-large;
-    color: black;
+    border: 2px solid rgb(42, 42, 43);
+    background-color: white;
+    height: 50vh;
+    margin-top: 70px;
+    border-radius: 10px;
+    padding: 20px;
+
+}
+
+#smallcol {
+
+    height: 83vh;
+    background:linear-gradient( rgb(98, 159, 167), rgb(172, 134, 172));
+
+
+}
+
+
+#largecol  {
+
+    height: 70vh;
+    background-color: white;
+    padding: 0;
+
+
+}
+
+#map  {
+
+    height: 83vh;
+    width: 100%;
 
 
 }
 
 .page-footer {
 
-    background-color: rgb(89, 149, 151); 
+    background-color: rgb(28, 46, 82);
     text-align: center;
     padding-bottom: 15px;
     
@@ -29,42 +81,3 @@ nav {
 }
 
 
-#smallcol {
-
-    height: 90vh;
-    background-color: rgb(216, 224, 198);
-
-
-}
-
-
-#largecol  {
-
-    height: 90vh;
-    background-color: white;
-    padding: 0;
-
-
-}
-
-h4 {
-
-    padding-bottom: 5px;
-    height: 20px;
-
-}
-
-
-#map  {
-
-}
-
-.input-field {
-    border: 10px color black;
-    float: right;
-    color: azure;
-
-    height: 657px; 
-    width: 100%; 
-
-}

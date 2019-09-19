@@ -25,15 +25,8 @@
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo"><i class="fas fa-car"></i>&nbsp;apARKi</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      </ul>
-      <div class="input-field col s6 white-text">
-        <input value="Search" id="first_name2" type="text" class="validate">
-        <label class="active" for="first_name2"></label>
-      </div>
 
-     <h4 class="medium fas fa-car">&nbsp;&nbsp;apARKi&nbsp;</h4>
+      <h3><i class="fas fa-car" style="font-size:40px;"></i>&nbsp;&nbsp;apARKi</h3>
 
     </div>
   </nav>
@@ -42,7 +35,32 @@
 
   <div class="row">
 
-    <div class="col l4" id="smallcol"></div>
+    <div class="col l4" id="smallcol">
+      <div class="container1">
+        
+        <div class="input-field">
+            <textarea class="input_fields materialize-textarea" id="address" type="text"></textarea>
+            <label class="active" for="address">Address</label>
+          </div>
+          <div class="input-field">
+            <input class="input_fields" id="state" type="text">
+            <label class="active" for="state">State</label>
+          </div>
+          <div class="input-field">
+            <input class="input_fields" id="city" type="text">
+            <label class="active" for="city">City</label>
+          </div>
+          <div class="input-field">
+            <input class="input_fields" id="zip_code" type="text">
+            <label class="active" for="zip_code">Zip Code</label>
+          </div>
+          <button class="btn waves-effect waves-light right" style="background-color: rgb(59, 58, 58)" type="submit" name="action">Submit
+              <i class="material-icons right">add_location</i>
+            </button>
+          
+        
+        </div>
+    </div>
     <div class="col l8" id="largecol">
       <div id="map"></div>
     </div>
@@ -67,9 +85,8 @@
   <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&callback=initMap"
     type="text/javascript"></script>
-    <script src="script.js" type="text/javascript"></script>
 
-
+  <script src="assets/javascript/app.js"></script>
 
 </body>
 

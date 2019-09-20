@@ -48,6 +48,7 @@ let lat;
 let lng;
 let address;
 let parking = [];
+let directionsArr = [];
 var map;
 
 function initParkingMap() {
@@ -127,6 +128,20 @@ $("#submitButton").on("click", function (event) {
     }).then(function(response) {
         //logging directions to the console
         console.log(response);
+
+        //console.log(response.routes[0].legs[0].steps[0].html_instructions);
+
+        let directions = response.routes[0].legs[0].steps[0].html_instructions;
+
+        for (let i = 0; i < directions.length; i++) {
+            console.log(directions[i]);
+
+            directionsArr.push(directions);
+
+        }
+
+        console.log(directionsArr);
+
     })
     //1st then ending
 

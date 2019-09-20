@@ -47,11 +47,6 @@ $.ajax({
 
 });
 
-function parking () {
-
-
-};
-
 $("#address").val("");
 })
 

@@ -5,7 +5,7 @@ let userLatitude;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         // Initial starting location is University of Central Florida
-        center: { lat: 28.589475, lng: -81.199879 },
+        center: { lat: 30, lng: 30 },
         zoom: 13
     });
     infoWindow = new google.maps.InfoWindow;
@@ -44,20 +44,11 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 initMap();
-
 let lat;
 let lng;
 let address;
 let parking = [];
 var map;
-$('#submitButton').keypress(function (e) {
-  if (e.which == 13) {
-    console.log(e.which);
-    let val = $('#submitButton').val();
-    console.log("Form Value: ", val);
-    $('#submitButton').text("");
-  }
-});
 
 function initParkingMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -84,10 +75,12 @@ function initParkingMap() {
     }
 }
 
+
 $("#submitButton").on("click", function (event) {
     event.preventDefault();
     address = $("#address").val().trim();
     console.log(address);
+
 
     var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 
@@ -136,7 +129,7 @@ $("#submitButton").on("click", function (event) {
         console.log(response);
     })
     //1st then ending
-      
+
     });
 
     $("#address").val("");

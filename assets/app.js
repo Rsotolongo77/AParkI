@@ -1,4 +1,3 @@
-
 let lat;
 let lng;
 let address;
@@ -94,10 +93,6 @@ $("#submitButton").on("click", function (event) {
             // Set the lat and long into variables
             // take that information and do another ajax call
             // Take that info and plug in into another ajax call for api/maps
-
-
-
-
 
 
 

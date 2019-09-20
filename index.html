@@ -1,25 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
 
-  
 
-  <title>apARKi</title>
-</head>
-
-<body>
-
+    <title>apARKi</title>
+  </head>
 
   <nav>
     <div class="nav-wrapper">
@@ -39,35 +35,37 @@
     </div>
   </nav>
 
+    <nav>
+      <div class="nav-wrapper">
+
+        <h3><i class="fas fa-car" style="font-size:40px;"></i>&nbsp;&nbsp;apARKi</h3>
+
+      </div>
+    </nav>
 
 
 
-  <div class="row">
-    <div class="col l4" id="smallcol">
-      <div class="container1">
+    <div class="row">
 
-        <div id="layout">
+      <div class="col l4" id="smallcol">
+        <div class="container1">
+
+          <div class="input-field">
+            <textarea class="input_fields materialize-textarea" id="address" placeholder="Where are you going?..." type="text"></textarea>
+            <label class="active" for="address">Destination</label>
+          </div>
+          <button class="btn waves-effect waves-light right" id="submitButton" style="background-color: rgb(59, 58, 58)" type="submit" name="action">Submit
+            <i class="material-icons right">add_location</i>
+          </button>
+
 
         </div>
       </div>
+      <div class="col l8" id="largecol">
+        <div id="map"></div>
+      </div>
 
     </div>
-    <div class="col l8" id="largecol">
-      <div id="map"></div>
-
-    </div>
-  </div>
-
-
-
-
-
-  <footer class="page-footer" style="position:fixed;bottom:0;left:0;width:100%;">
-    <div class="container">
-      © 2019 Copyright GitItDone. inc
-    </div>
-  </footer>
-
   
   <!--jquery link-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -78,6 +76,11 @@
     type="text/javascript"></script>
   <script src="assets/app.js"></script>
 
-</body>
+    <footer class="page-footer" style="position:fixed;bottom:0;left:0;width:100%;">
+      <div class="container">
+        © 2019 Copyright GitItDone. inc
+      </div>
+    </footer>
+  </body>
 
 </html>

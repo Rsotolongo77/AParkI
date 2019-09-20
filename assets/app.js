@@ -74,15 +74,32 @@ function initParkingMap() {
       })(marker, i));
     }
 }
+$('#address').keypress(function (e) {
+    if (e.which == 13) {
+      console.log(e.which);
+      address = $('#address').val();
+      console.log("Form Value: ", address);
+      
+      getResults(address)
+    //   $('#address').text("");
+    }
+  });
+
+// $('#ad').keypress(function (e) {
+//     // event.preventDefault();
+//     // address = $("#address").val().trim();
+//     // console.log(address);
 
 
-$("#submitButton").on("click", function (event) {
-    event.preventDefault();
-    address = $("#address").val().trim();
-    console.log(address);
+//     if (e.which == 13) {
+//         console.log(e.which);
+//         address = $("#address").val().trim();
+//         console.log("Form Value: ", val);
+//         // $('#submitButton').text("");
+//       }
 
-
-    var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
+function getResults(x){
+    var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + x + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 
     $.ajax({
         url: queryPlacesURL,
@@ -132,8 +149,8 @@ $("#submitButton").on("click", function (event) {
 
     });
 
-    $("#address").val("");
-})
+    // $("#address").val("");
+}
 
             // Set the lat and long into variables
             // take that information and do another ajax call

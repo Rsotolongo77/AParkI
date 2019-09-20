@@ -29,12 +29,33 @@ $.ajax({
     console.log(data.geometry.location.lng);
     let lat = data.geometry.location.lat;
     let lng = data.geometry.location.lng;
+
+    var queryParking = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," +lng + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&radius=1000&types=parking";
+
+    $.ajax({
+        url: queryParking,
+        method: "GET"
+    }).then(function (response) {
+        console.log(response);
+
+        let results = response.results
+
+        for (let i = 0; i < results.length; i++) {
+            console.log(results[i].name, results[i].geometry.location);
+        }
+    })
+
 });
+
+function parking () {
+
+
+};
 
 $("#address").val("");
 })
 
-            // Take the values from search 
+            // Take the values from search
             // Throw them into an ajax call api/places/Text
             // Go through response into formated_address and get back...
             // Geometry (lattitude and longitude)

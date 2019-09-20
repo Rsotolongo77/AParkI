@@ -5,7 +5,7 @@ let userLatitude;
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         // Initial starting location is University of Central Florida
-        center: { lat: 30, lng: 30 },
+        center: { lat: 28.589475, lng: -81.199879 },
         zoom: 13
     });
     infoWindow = new google.maps.InfoWindow;
@@ -145,5 +145,3 @@ $("#submitButton").on("click", function (event) {
             // Set the lat and long into variables
             // take that information and do another ajax call
             // Take that info and plug in into another ajax call for api/maps
-
-

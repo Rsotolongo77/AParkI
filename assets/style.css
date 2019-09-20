@@ -2,7 +2,7 @@ nav {
     /*rgb(89, 111, 151)*/
     background-color: rgb(28, 46, 82);
     font-family: 'Abril Fatface', cursive;
-    text-shadow: 2px 2px black;
+    
     height: 10vh;
     
 
@@ -11,10 +11,9 @@ nav {
 }
 
 
-#search {
+#submitButton {
 
     border-radius: 10px;
-    background: radial-gradient(circle, #22c1c3 0%, #382df0 100%);
     border: 3px solid black;
     width: 395px;
     height: 50px;
@@ -34,6 +33,7 @@ nav {
     margin-left: 15px;
 
 
+
 }
 
 
@@ -41,17 +41,25 @@ nav {
 
    
     bottom: -10px;
+    background: radial-gradient(circle, #22c1c3 0%, #382df0 100%);
+    border-radius: 10px;
+    width: 460px;
+    
 
 
 }
 
 
-i  {
+
+.fas  {
 
 color: rgb(107, 204, 172);
+text-shadow: 2px 2px black;
     
 
 }
+
+
 
 
 
@@ -62,6 +70,7 @@ h3 {
     margin-top: 0;
     margin-right: 30px;
     float: right;
+    text-shadow: 2px 2px black;
     
     
     

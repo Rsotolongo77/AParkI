@@ -4,6 +4,14 @@ let lng;
 let address;
 let parking = [];
 var map;
+$('#submitButton').keypress(function (e) {
+  if (e.which == 13) {
+    console.log(e.which);
+    let val = $('#submitButton').val();
+    console.log("Form Value: ", val);
+    $('#submitButton').text("");
+  }
+});
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -29,13 +37,6 @@ function initMap() {
       })(marker, i));
     }
 }
-
-
-$("#submitButton").on("click", function (event) {
-    event.preventDefault();
-    address = $("#address").val().trim();
-    console.log(address);
-
 
 var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 
@@ -77,8 +78,7 @@ $.ajax({
 
 });
 
-$("#address").val("");
-})
+
 
             // Take the values from search
             // Throw them into an ajax call api/places/Text

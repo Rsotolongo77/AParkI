@@ -1,10 +1,57 @@
+var map, infoWindow;
+let userLongitude;
+let userLatitude;
+// Function to initilize the map to the screen
+function initMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        // Initial starting location is University of Central Florida
+        center: { lat: 30, lng: 30 },
+        zoom: 13
+    });
+    infoWindow = new google.maps.InfoWindow;
+
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+
+            };
+            userLatitude = pos.lat
+            userLongitude = pos.lng
+            console.log(userLatitude)
+            console.log(userLongitude)
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('Location found.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+        }, function () {
+            handleLocationError(true, infoWindow, map.getCenter());
+        });
+    } else {
+        // Browser doesn't support Geolocation
+        handleLocationError(false, infoWindow, map.getCenter());
+    }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+        'Error: The Geolocation service failed.' :
+        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.open(map);
+}
+initMap();
+=======
 let lat;
 let lng;
 let address;
 let parking = [];
 var map;
 
-function initMap() {
+function initParkingMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: { lat: lat, lng: lng },
         zoom: 15
@@ -36,10 +83,10 @@ $("#submitButton").on("click", function (event) {
     console.log(address);
 
 
-    var queryURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
+    var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 
     $.ajax({
-        url: queryURL,
+        url: queryPlacesURL,
         method: "GET"
     }).then(function (response) {
         let data = response.candidates[0];
@@ -49,15 +96,13 @@ $("#submitButton").on("click", function (event) {
         lat = data.geometry.location.lat;
         lng = data.geometry.location.lng;
 
+        var queryParkingURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&radius=1000&types=parking";
 
-
-    var queryParking = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," +lng + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&radius=1000&types=parking";
-    //inside the 1st .then
-    $.ajax({
-        url: queryParking,
-        method: "GET"
-    }).then(function (response) {
-        console.log(response);
+        $.ajax({
+            url: queryParkingURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(response);
 
         let results = response.results;
 
@@ -71,20 +116,21 @@ $("#submitButton").on("click", function (event) {
         }
 
         console.log(parking);
-        initMap();
+        initParkingMap();
     })
     //inside the 1st then
 
-    var queryDirections = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE"
+    var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE"
 
     $.ajax ({
-        url: queryDirections,
+        url: queryDirectionsURL,
         method: "GET"
     }).then(function(response) {
         //logging directions to the console
         console.log(response);
     })
     //1st then ending
+      
     });
 
     $("#address").val("");
@@ -93,6 +139,5 @@ $("#submitButton").on("click", function (event) {
             // Set the lat and long into variables
             // take that information and do another ajax call
             // Take that info and plug in into another ajax call for api/maps
-
 
 

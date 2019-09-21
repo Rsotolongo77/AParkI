@@ -62,17 +62,17 @@ function initParkingMap() {
     var marker, i;
 
     for (i = 0; i < parking.length; i++) {
-      marker = new google.maps.Marker({
-        position: new google.maps.LatLng(parking[i][1], parking[i][2]),
-        map: map
-      });
+        marker = new google.maps.Marker({
+            position: new google.maps.LatLng(parking[i][1], parking[i][2]),
+            map: map
+        });
 
-      google.maps.event.addListener(marker, 'click', (function(marker, i) {
-        return function() {
-          infoWindow.setContent(parking[i][0]);
-          infoWindow.open(map, marker);
-        }
-      })(marker, i));
+        google.maps.event.addListener(marker, 'click', (function (marker, i) {
+            return function () {
+                infoWindow.setContent(parking[i][0]);
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
     }
 }
 
@@ -104,49 +104,49 @@ $("#submitButton").on("click", function (event) {
         }).then(function (response) {
             console.log(response);
 
-        let results = response.results;
+            let results = response.results;
 
-        for (let i = 0; i < results.length; i++) {
-            //console.log(results[i].name, results[i].geometry.location.lat, results[i].geometry.location.lng);
+            for (let i = 0; i < results.length; i++) {
+                //console.log(results[i].name, results[i].geometry.location.lat, results[i].geometry.location.lng);
 
-            let parkingPush = [results[i].name, results[i].geometry.location.lat, results[i].geometry.location.lng];
+                let parkingPush = [results[i].name, results[i].geometry.location.lat, results[i].geometry.location.lng];
 
-            parking.push(parkingPush);
+                parking.push(parkingPush);
 
-        }
+            }
 
-        console.log(parking);
-        initParkingMap();
-    })
-    //inside the 1st then
+            console.log(parking);
+            initParkingMap();
+        })
+        //inside the 1st then
 
-    var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE"
+        var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + userLongitude + "&destination=" + address + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE"  
 
-    $.ajax ({
-        url: queryDirectionsURL,
-        method: "GET"
-    }).then(function(response) {
-        //logging directions to the console
-        console.log(response);
+        $.ajax({
+            url: queryDirectionsURL,
+            method: "GET"
+        }).then(function (response) {
+            //logging directions to the console
+            console.log(response);
 
-        //console.log(response.routes[0].legs[0].steps[0].html_instructions);
+            //console.log(response.routes[0].legs[0].steps[0].html_instructions);
 
-        let steps = response.routes[0].legs[0].steps
+            let steps = response.routes[0].legs[0].steps
 
-        for (let i = 0; i < steps.length; i++) {
+            for (let i = 0; i < steps.length; i++) {
 
-            let dirDiv = $("<p>");
+                let dirDiv = $("<p>");
 
-            let instr = steps[i].html_instructions;
+                let instr = steps[i].html_instructions;
 
-            dirDiv.append(instr);
+                dirDiv.append(instr);
 
-            $(".container1").append(dirDiv)
+                $(".container1").append(dirDiv)
 
-        }
+            }
 
-    })
-    //1st then ending
+        })
+        //1st then ending
 
     });
 

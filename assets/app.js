@@ -1,6 +1,8 @@
 var map, infoWindow;
+
 let userLongitude;
 let userLatitude;
+
 // Function to initilize the map to the screen
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -20,8 +22,8 @@ function initMap() {
             };
             userLatitude = pos.lat
             userLongitude = pos.lng
-            console.log(userLatitude)
-            console.log(userLongitude)
+            console.log(userLatitude);
+            console.log(userLongitude);
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
@@ -48,7 +50,7 @@ let lat;
 let lng;
 let address;
 let parking = [];
-let directionsArr = [];
+let stepsArr = [];
 var map;
 
 function initParkingMap() {
@@ -120,7 +122,7 @@ $("#submitButton").on("click", function (event) {
     })
     //inside the 1st then
 
-    var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=Disneyland&destination=Universal+Studios+Hollywood&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE"
+    var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin="+ userLatitude + "," + userLongitude + "&destination=" + address + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
 
     $.ajax ({
         url: queryDirectionsURL,
@@ -129,18 +131,19 @@ $("#submitButton").on("click", function (event) {
         //logging directions to the console
         console.log(response);
 
-        //console.log(response.routes[0].legs[0].steps[0].html_instructions);
+        let steps = response.routes[0].legs[0].steps
 
-        let directions = response.routes[0].legs[0].steps[0].html_instructions;
+        for (let i = 0; i < steps.length; i++) {
 
-        for (let i = 0; i < directions.length; i++) {
-            console.log(directions[i]);
+            let dirDiv = $("<p>");
 
-            directionsArr.push(directions);
+            let instr = steps[i].html_instructions;
+
+            dirDiv.append(instr);
+
+            $(".container1").append(dirDiv)
 
         }
-
-        console.log(directionsArr);
 
     })
     //1st then ending

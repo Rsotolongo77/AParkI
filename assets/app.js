@@ -1,6 +1,8 @@
 var map, infoWindow;
+
 let userLongitude;
 let userLatitude;
+
 // Function to initilize the map to the screen
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
@@ -20,8 +22,8 @@ function initMap() {
             };
             userLatitude = pos.lat
             userLongitude = pos.lng
-            console.log(userLatitude)
-            console.log(userLongitude)
+            console.log(userLatitude);
+            console.log(userLongitude);
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
@@ -120,7 +122,7 @@ $("#submitButton").on("click", function (event) {
         })
         //inside the 1st then
 
-        var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + userLongitude + "&destination=" + address + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE"  
+    var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin="+ userLatitude + "," + userLongitude + "&destination=" + address + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
 
         $.ajax({
             url: queryDirectionsURL,
@@ -129,9 +131,8 @@ $("#submitButton").on("click", function (event) {
             //logging directions to the console
             console.log(response);
 
-            //console.log(response.routes[0].legs[0].steps[0].html_instructions);
+        let steps = response.routes[0].legs[0].steps
 
-            let steps = response.routes[0].legs[0].steps
 
             for (let i = 0; i < steps.length; i++) {
 

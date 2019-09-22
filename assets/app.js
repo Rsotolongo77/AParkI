@@ -5,16 +5,19 @@ let userLatitude;
 
 // Function to initilize the map to the screen
 function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'),{
         // Initial starting location is University of Central Florida
-        center: { lat: 30, lng: 30 },
+        center: {
+            lat: 30,
+            lng: 30
+        },
         zoom: 13
     });
     infoWindow = new google.maps.InfoWindow;
 
     // Try HTML5 geolocation.
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
+        navigator.geolocation.getCurrentPosition(function(position) {
             var pos = {
                 lat: position.coords.latitude,
                 lng: position.coords.longitude
@@ -29,7 +32,7 @@ function initMap() {
             infoWindow.setContent('Location found.');
             infoWindow.open(map);
             map.setCenter(pos);
-        }, function () {
+        }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
         });
     } else {
@@ -40,9 +43,7 @@ function initMap() {
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
+    infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
     infoWindow.open(map);
 }
 initMap();
@@ -54,8 +55,11 @@ let stepsArr = [];
 var map;
 
 function initParkingMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: lat, lng: lng },
+    map = new google.maps.Map(document.getElementById('map'),{
+        center: {
+            lat: lat,
+            lng: lng
+        },
         zoom: 15
     });
 
@@ -65,32 +69,31 @@ function initParkingMap() {
 
     for (i = 0; i < parking.length; i++) {
         marker = new google.maps.Marker({
-            position: new google.maps.LatLng(parking[i][1], parking[i][2]),
+            position: new google.maps.LatLng(parking[i][1],parking[i][2]),
             map: map
         });
 
-        google.maps.event.addListener(marker, 'click', (function (marker, i) {
-            return function () {
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
                 infoWindow.setContent(parking[i][0]);
                 infoWindow.open(map, marker);
             }
-        })(marker, i));
+        }
+        )(marker, i));
     }
 }
 
-
-$("#submitButton").on("click", function (event) {
+$("#submitButton").on("click", function(event) {
     event.preventDefault();
     address = $("#address").val().trim();
     console.log(address);
-
 
     var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 
     $.ajax({
         url: queryPlacesURL,
         method: "GET"
-    }).then(function (response) {
+    }).then(function(response) {
         let data = response.candidates[0];
         console.log(data.geometry.location);
         console.log(data.geometry.location.lat);
@@ -103,7 +106,7 @@ $("#submitButton").on("click", function (event) {
         $.ajax({
             url: queryParkingURL,
             method: "GET"
-        }).then(function (response) {
+        }).then(function(response) {
             console.log(response);
 
             let results = response.results;
@@ -122,23 +125,24 @@ $("#submitButton").on("click", function (event) {
         })
         //inside the 1st then
 
-    var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin="+ userLatitude + "," + userLongitude + "&destination=" + address + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
+        var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + "," + userLongitude + "&destination=" + address + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
 
         $.ajax({
             url: queryDirectionsURL,
             method: "GET"
-        }).then(function (response) {
+        }).then(function(response) {
             //logging directions to the console
             console.log(response);
 
-        let steps = response.routes[0].legs[0].steps
-
+            let steps = response.routes[0].legs[0].steps
 
             for (let i = 0; i < steps.length; i++) {
 
                 let dirDiv = $("<p>");
 
                 let instr = steps[i].html_instructions;
+
+                console.log(instr);
 
                 dirDiv.append(instr);
 
@@ -154,6 +158,6 @@ $("#submitButton").on("click", function (event) {
     $("#address").val("");
 })
 
-            // Set the lat and long into variables
-            // take that information and do another ajax call
-            // Take that info and plug in into another ajax call for api/maps
+// Set the lat and long into variables
+// take that information and do another ajax call
+// Take that info and plug in into another ajax call for api/maps

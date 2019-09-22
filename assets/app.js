@@ -1,20 +1,28 @@
-$(document).ready(function () {
+$(document).ready(function() {
     var map, infoWindow;
     let userLongitude;
     let userLatitude;
-    // Function to initilize the map to the screen
+    let lat;
+    let lng;
+    let address;
+    let parking = [];
+    let stepsArr = [];
 
+    // Function to initilize the map to the screen
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'),{
             // Initial starting location is University of Central Florida
-            center: { lat: 30, lng: 30 },
+            center: {
+                lat: 30,
+                lng: 30
+            },
             zoom: 13
         });
         infoWindow = new google.maps.InfoWindow;
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
+            navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
@@ -25,13 +33,12 @@ $(document).ready(function () {
                 console.log(userLatitude)
                 console.log(userLongitude)
 
-
                 infoWindow.setPosition(pos);
                 infoWindow.setContent('Location found.');
                 infoWindow.open(map);
                 map.setCenter(pos);
 
-            }, function () {
+            }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
         } else {
@@ -40,25 +47,19 @@ $(document).ready(function () {
         }
     }
 
-
     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-            'Error: The Geolocation service failed.' :
-            'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
         infoWindow.open(map);
     }
     initMap();
-    let lat;
-    let lng;
-    let address;
-    let parking = [];
-    let stepsArr = [];
-    var map;
 
     function initParkingMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: { lat: lat, lng: lng },
+        map = new google.maps.Map(document.getElementById('map'),{
+            center: {
+                lat: lat,
+                lng: lng
+            },
             zoom: 15
         });
 
@@ -68,37 +69,33 @@ $(document).ready(function () {
 
         for (i = 0; i < parking.length; i++) {
             marker = new google.maps.Marker({
-                position: new google.maps.LatLng(parking[i][1], parking[i][2]),
+                position: new google.maps.LatLng(parking[i][1],parking[i][2]),
                 map: map
             });
 
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
                     infoWindow.setContent(parking[i][0]);
                     infoWindow.open(map, marker);
                 }
-            })(marker, i));
+            }
+            )(marker, i));
         }
     }
 
-
-    $("#submitButton1").on("click", function (event) {
+    $("#submitButton1").on("click", function(event) {
         event.preventDefault();
         address = $("#address").val().trim();
         console.log(address);
 
         $("p").remove();
 
-
-
-
-
         var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 
         $.ajax({
             url: queryPlacesURL,
             method: "GET"
-        }).then(function (response) {
+        }).then(function(response) {
             let data = response.candidates[0];
             console.log(data.geometry.location);
             console.log(data.geometry.location.lat);
@@ -111,13 +108,12 @@ $(document).ready(function () {
             $.ajax({
                 url: queryParkingURL,
                 method: "GET"
-            }).then(function (response) {
+            }).then(function(response) {
                 console.log(response);
 
                 let results = response.results;
 
                 for (let i = 0; i < results.length; i++) {
-                    //console.log(results[i].name, results[i].geometry.location.lat, results[i].geometry.location.lng);
 
                     let parkingPush = [results[i].name, results[i].geometry.location.lat, results[i].geometry.location.lng];
 
@@ -125,7 +121,6 @@ $(document).ready(function () {
 
                 }
 
-                console.log(parking);
                 initParkingMap();
             })
             //inside the 1st then
@@ -135,7 +130,7 @@ $(document).ready(function () {
             $.ajax({
                 url: queryDirectionsURL,
                 method: "GET"
-            }).then(function (response) {
+            }).then(function(response) {
                 //logging directions to the console
                 console.log(response);
 
@@ -152,19 +147,14 @@ $(document).ready(function () {
                     dirDiv.append(instr);
                     dirDiv.append("  then go "),
 
-                        $(".container1").append(dirDiv)
-
-
+                    $(".container1").append(dirDiv)
 
                     let miles = response.routes[0].legs[0].steps[i].distance.text
                     console.log(miles);
 
-
                     dirDiv.append(miles);
 
                     $(".container1").append(dirDiv)
-
-
 
                 }
 
@@ -178,10 +168,6 @@ $(document).ready(function () {
 
 });
 
-            // Set the lat and long into variables
-            // take that information and do another ajax call
-            // Take that info and plug in into another ajax call for api/maps
-
-
-
-
+// Set the lat and long into variables
+// take that information and do another ajax call
+// Take that info and plug in into another ajax call for api/maps

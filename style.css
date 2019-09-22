@@ -18,12 +18,49 @@ nav {
     height: 50px;
     margin-left: 0px;
     bottom: -10px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-size: medium;
+    font-family: 'Merriweather', serif;
+    
+    
    
+}
+
+
+
+::-webkit-input-placeholder { 
+    color: rgb(207, 199, 199);
     
     
     
+  }
+  ::-moz-placeholder { 
+    color: rgb(207, 199, 199);
+    
+    
+  }
+  :-ms-input-placeholder { 
+    color: rgb(207, 199, 199);
     
    
+  }
+  :-moz-placeholder { 
+    color: rgb(207, 199, 199);
+    
+    
+  }
+
+
+p  {
+
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid black;
+
+
+
 }
 
 
@@ -31,6 +68,7 @@ nav {
 
     margin-left: 5px;
     margin-top: 15px;
+    color: black;
 
 
 
@@ -41,29 +79,36 @@ nav {
 
    
     bottom: -10px;
-    background: radial-gradient(circle, #22c1c3 0%, #382df0 100%);
+    background: radial-gradient(circle, #382df0 0%, #1d999b 100%);
     border-radius: 10px;
     width: 400px;
     margin-left: 15px;
+    color: black;
+   
+   
     
 
 
 }
 
 
-#submitButton {
+ #submitButton   {
 
     float: right;
     border-radius: 10px;
-    width: 90px;
-    margin-right: 25px;
-    margin-top: 5px;
-    background:linear-gradient(rgba(255, 72, 0, 0.822), transparent),
-            linear-gradient(to top left, rgba(0, 255, 191, 0.507),transparent),
-            linear-gradient(to top right, rgba(0, 0, 255, 0.842), transparent);
-        background-blend-mode: screen;
+    width: 136px;
+    margin-bottom: 10px;
+    margin-right: 0;
+    margin-top: -40px;
+    background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
+        linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
+        linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);
+background-blend-mode: screen;
     border: 2px solid black;
-    color: black;
+    color: white;
+    font-family: 'Abril Fatface', cursive;
+    
+
 
     }
     
@@ -106,7 +151,7 @@ h3 {
     margin-top: 5px;
     border-radius: 10px;
     padding: 12px;
-
+    overflow: auto;
 }
 
 #smallcol {
@@ -129,7 +174,7 @@ h3 {
 
 #map  {
 
-    height: 83vh;
+    height: 86vh;
     width: 100%;
 
 }
@@ -144,6 +189,7 @@ h3 {
     
 
 }
+
 
 
 

@@ -11,26 +11,26 @@ nav {
     height: 50px;
     margin-left: 0px;
     bottom: -10px;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     text-align: center;
     font-size: medium;
     font-family: 'Merriweather', serif;
 }
 
 ::-webkit-input-placeholder {
-    color: white;
+    color: rgb(207, 199, 199);;
 }
 
 ::-moz-placeholder {
-    color: white;
+    color: rgb(207, 199, 199);;
 }
 
 :-ms-input-placeholder {
-    color: white;
+    color: rgb(207, 199, 199);;
 }
 
 :-moz-placeholder {
-    color: white;
+    color: rgb(207, 199, 199);;
 }
 
 p {
@@ -55,35 +55,22 @@ p {
     color: black;
 }
 
-#submitButton1 {
-    float: left;
+#submitButton {
+    float: right;
     border-radius: 10px;
-    width: 180px;
+    width: 136px;
     margin-bottom: 10px;
-    margin-right: 10px;
-    margin-left: 15px;
-    margin-top: -10px;
-    background: linear-gradient(rgba(128, 107, 100, 0.822), transparent), linear-gradient(to top left, rgba(157, 175, 175, 0.507),transparent), linear-gradient(to top right, rgba(64, 64, 110, 0.842), transparent);
+    margin-right: 15px;
+    margin-top: -40px;
+    background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
+    linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
+    linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);
     background-blend-mode: screen;
     border: 2px solid black;
     color: white;
     font-family: 'Abril Fatface', cursive;
 }
 
-#submitButton2 {
-    float: right;
-    border-radius: 10px;
-    width: 180px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 15px;
-    margin-top: -10px;
-    background: linear-gradient(rgba(128, 107, 100, 0.822), transparent), linear-gradient(to top left, rgba(157, 175, 175, 0.507),transparent), linear-gradient(to top right, rgba(64, 64, 110, 0.842), transparent);
-    background-blend-mode: screen;
-    border: 2px solid black;
-    color: white;
-    font-family: 'Abril Fatface', cursive;
-}
 
 .fas {
     color: rgb(107, 204, 172);

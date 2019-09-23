@@ -124,10 +124,17 @@ $(document).ready(function () {
                     parkingLotLat = parkingPush[1];
                     parkingLotLong = parkingPush[2];
 
+                    console.log(parkingPush[1], parkingPush[2])
+
                     console.log(parkingLotLat, parkingLotLong);
 
                     let parkingLotOptions = [results[i].name, results[i]];
                     let parkingOptions = $("<p>");
+
+                    parkingOptions.attr("lat", parkingPush[1]);
+                    parkingOptions.attr("lng", parkingPush[2]);
+                    parkingOptions.attr("data-name", results[i].name)
+
                     parkingOptions.append(parkingLotOptions);
                     $(".container1").append(parkingOptions);
 
@@ -157,16 +164,16 @@ $(document).ready(function () {
                     let instr = steps[i].html_instructions;
 
                     dirDiv.append(instr);
-                    dirDiv.append("  then go "),
+                    dirDiv.append("  then go ");
 
-                        $(".container1").append(dirDiv)
+                    //$(".container1").append(dirDiv)
 
                     let miles = response.routes[0].legs[0].steps[i].distance.text
                     console.log(miles);
 
                     dirDiv.append(miles);
 
-                    $(".container1").append(dirDiv)
+                    //$(".container1").append(dirDiv)
 
                 }
 
@@ -178,7 +185,49 @@ $(document).ready(function () {
         $("#address").val("");
     });
 
+    $(document).on("click", "p", function (){
+
+        var parkingName = $(this).attr("data-name");
+
+        console.log(parkingName);
+
+        var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + "," + userLongitude + "&destination=" + parkingName + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
+
+        $.ajax({
+            url: queryDirectionsURL,
+            method: "GET"
+        }).then(function(response){
+            console.log(response);
+
+            $(".container1").empty("<p>");
+
+            let steps = response.routes[0].legs[0].steps
+
+            for (let i = 0; i < steps.length; i++) {
+
+                let dirDiv = $("<p>");
+
+                let instr = steps[i].html_instructions;
+
+                dirDiv.append(instr);
+                dirDiv.append("  then go ");
+
+                $(".container1").append(dirDiv)
+
+                let miles = response.routes[0].legs[0].steps[i].distance.text
+                console.log(miles);
+
+                dirDiv.append(miles);
+
+                $(".container1").append(dirDiv)
+
+            }
+
+        })
+    })
+
 });
+
 
 // Set the lat and long into variables
 // take that information and do another ajax call

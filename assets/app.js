@@ -243,9 +243,12 @@ $(document).ready(function () {
 
         var parkingName = $(this).attr("data-name");
 
+        var parkingLat = $(this).attr("lat");
+        var parkingLng = $(this).attr("lng");
+
         console.log(parkingName);
 
-        var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + "," + userLongitude + "&destination=" + parkingName + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
+        var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + "," + userLongitude + "&destination=" + parkingLat + "," + parkingLng + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
 
         $.ajax({
             url: queryDirectionsURL,

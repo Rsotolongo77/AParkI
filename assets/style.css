@@ -35,7 +35,7 @@ nav {
 
 p {
     margin-top: 15px;
-    margin-left: 10px;
+    margin-left: 15px;
     margin-bottom: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -49,7 +49,7 @@ p {
 
 .input-field {
     bottom: -10px;
-    background: radial-gradient(circle, #382df0 0%, #1d999b 100%);
+    background: radial-gradient(circle, #453ddf 0%, #1d999b 100%);
     border-radius: 10px;
     width: 400px;
     margin-left: 15px;
@@ -62,6 +62,7 @@ p {
     width: 136px;
     margin-bottom: 10px;
     margin-right: 15px;
+    margin-left: 60px;
     margin-top: -40px;
     background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
     linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
@@ -73,9 +74,23 @@ p {
 
 }
 
-button {
-    margin-left: 5px;
+#backButton {
+    float: left;
+    border-radius: 10px;
+    width: 136px;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    margin-right: 40px;
+    margin-top: -40px;
+    background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
+    linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
+    linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);
+    background-blend-mode: screen;
+    border: 2px solid black;
+    color: white;
+    font-family: 'Abril Fatface', cursive;
 }
+
 .fas {
     color: rgb(107, 204, 172);
     text-shadow: 2px 2px black;
@@ -123,10 +138,11 @@ h3 {
 
 .directionsBtn:hover {
     cursor: pointer;
-    background-color: blue;
-    border-bottom: 1px solid black;
+    background-color: rgb(197, 197, 197);
+    /*border-bottom: 1px solid rgb(0, 0, 0);*/
+    border-radius: 5px;
 }
 
-/* .directionsBtn {
+/*.directionsBtn {
     border-bottom: 1px solid black;
-} */
+}

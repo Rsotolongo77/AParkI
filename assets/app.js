@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).ready(function() {
     var map, infoWindow;
     let userLongitude;
     let userLatitude;
@@ -12,7 +12,7 @@ $(document).ready(function () {
 
     // Function to initilize the map to the screen
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'),{
             // Initial starting location is University of Central Florida
             center: {
                 lat: 30,
@@ -24,7 +24,7 @@ $(document).ready(function () {
 
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
+            navigator.geolocation.getCurrentPosition(function(position) {
                 var pos = {
                     lat: position.coords.latitude,
                     lng: position.coords.longitude
@@ -40,7 +40,7 @@ $(document).ready(function () {
                 infoWindow.open(map);
                 map.setCenter(pos);
 
-            }, function () {
+            }, function() {
                 handleLocationError(true, infoWindow, map.getCenter());
             });
         } else {
@@ -57,7 +57,7 @@ $(document).ready(function () {
     initMap();
 
     function initParkingMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        map = new google.maps.Map(document.getElementById('map'),{
             center: {
                 lat: lat,
                 lng: lng
@@ -71,12 +71,12 @@ $(document).ready(function () {
 
         for (i = 0; i < parking.length; i++) {
             marker = new google.maps.Marker({
-                position: new google.maps.LatLng(parking[i][1], parking[i][2]),
+                position: new google.maps.LatLng(parking[i][1],parking[i][2]),
                 map: map
             });
 
-            google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                return function () {
+            google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                return function() {
                     infoWindow.setContent(parking[i][0]);
                     infoWindow.open(map, marker);
                 }
@@ -85,7 +85,7 @@ $(document).ready(function () {
         }
     }
 
-    $("#submitButton").on("click", function (event) {
+    $("#submitButton").on("click", function(event) {
         event.preventDefault();
         address = $("#address").val().trim();
         console.log(address);
@@ -97,7 +97,7 @@ $(document).ready(function () {
         $.ajax({
             url: queryPlacesURL,
             method: "GET"
-        }).then(function (response) {
+        }).then(function(response) {
             let data = response.candidates[0];
             console.log(data.geometry.location);
             console.log(data.geometry.location.lat);
@@ -110,7 +110,7 @@ $(document).ready(function () {
             $.ajax({
                 url: queryParkingURL,
                 method: "GET"
-            }).then(function (response) {
+            }).then(function(response) {
                 console.log(response);
 
                 let results = response.results;
@@ -149,7 +149,7 @@ $(document).ready(function () {
             $.ajax({
                 url: queryDirectionsURL,
                 method: "GET"
-            }).then(function (response) {
+            }).then(function(response) {
                 //logging directions to the console
                 console.log(response);
 
@@ -185,7 +185,7 @@ $(document).ready(function () {
         $("#address").val("");
     });
 
-    $(document).on("click", "p", function (){
+    $(document).on("click", "p", function() {
 
         var parkingName = $(this).attr("data-name");
 
@@ -196,7 +196,7 @@ $(document).ready(function () {
         $.ajax({
             url: queryDirectionsURL,
             method: "GET"
-        }).then(function(response){
+        }).then(function(response) {
             console.log(response);
 
             $(".container1").empty("<p>");
@@ -227,7 +227,6 @@ $(document).ready(function () {
     })
 
 });
-
 
 // Set the lat and long into variables
 // take that information and do another ajax call

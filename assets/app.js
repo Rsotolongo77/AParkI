@@ -195,6 +195,7 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
 
+
             $("p").empty();
 
             let steps = response.routes[0].legs[0].steps

@@ -122,7 +122,6 @@ $(document).ready(function () {
 
                     let parkingLotOptions = [results[i].name, results[i]];
                     let parkingOptions = $("<p>");
-                    let button = $("<button/>");
 
                     parkingOptions.attr("lat", parkingPush[1]);
                     parkingOptions.attr("lng", parkingPush[2]);
@@ -130,7 +129,6 @@ $(document).ready(function () {
                     parkingOptions.addClass("directionsBtn")
 
                     parkingOptions.append(parkingLotOptions);
-                    parkingOptions.append(button);
                     $(".container1").append(parkingOptions);
 
                 }

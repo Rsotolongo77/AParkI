@@ -18,19 +18,23 @@ nav {
 }
 
 ::-webkit-input-placeholder {
-    color: rgb(207, 199, 199);;
+    color: rgb(207, 199, 199);
+    ;
 }
 
 ::-moz-placeholder {
-    color: rgb(207, 199, 199);;
+    color: rgb(207, 199, 199);
+    ;
 }
 
 :-ms-input-placeholder {
-    color: rgb(207, 199, 199);;
+    color: rgb(207, 199, 199);
+    ;
 }
 
 :-moz-placeholder {
-    color: rgb(207, 199, 199);;
+    color: rgb(207, 199, 199);
+    ;
 }
 
 p {
@@ -62,15 +66,14 @@ p {
     margin-bottom: 10px;
     margin-right: 15px;
     margin-top: -40px;
-    background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
-    linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
-    linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);
+    background: linear-gradient(rgba(160, 119, 105, 0.822), transparent),
+        linear-gradient(to top left, rgba(138, 173, 173, 0.507), transparent),
+        linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);
     background-blend-mode: screen;
     border: 2px solid black;
     color: white;
     font-family: 'Abril Fatface', cursive;
 }
-
 
 .fas {
     color: rgb(107, 204, 172);
@@ -97,7 +100,7 @@ h3 {
 
 #smallcol {
     height: 90vh;
-    background: linear-gradient( rgb(98, 159, 167), rgb(172, 134, 172));
+    background: linear-gradient(rgb(98, 159, 167), rgb(172, 134, 172));
 }
 
 #largecol {
@@ -116,3 +119,834 @@ h3 {
     text-align: center;
     padding-bottom: 15px;
 }
+/* 
+  ##Device = Desktops
+  ##Screen = 1281% to higher resolution desktops
+*/
+@media (min-width: 1281%) {
+    .nav-wrapper {
+        min-width: 1281%;
+    }
+    h3 {
+        min-width: 1281%;
+    }
+    .fas {
+        min-width: 1281%;
+    }
+    .row {
+        min-width: 1281%;
+    }
+    #smallcol {
+        min-width: 1281%;
+    }
+    .container1 {
+        min-width: 1281%;
+    }
+    .input-field {
+        min-width: 1281%;
+    }
+    #address {
+        min-width: 1281%;
+    }
+    .label-icon {
+        min-width: 1281%;
+    }
+    .material-icons {
+        min-width: 1281%;
+    }
+    .btn {
+        min-width: 1281%;
+    }
+    #submitButton {
+        min-width: 1281%;
+    }
+    .material-icons {
+        min-width: 1281%;
+    }
+    #directions-dump {
+        min-width: 1281%;
+    }
+    #largecol {
+        min-width: 1281%;
+    }
+    #map {
+        min-width: 1281%;
+    }
+    .page-footer {
+        min-width: 1281%;
+    }
+    .container {
+        min-width: 1281%;
+    }
+}
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025% to 1280%
+  */
+@media (min-width: 1025%) and (max-width: 1280%) {
+    .nav-wrapper {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .fas {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    h3 {
+        min-width: 1281%;
+        max-width: 1280%;
+    }
+    .row {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    #smallcol {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .container1 {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .input-field {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    #address {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .label-icon {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .material-icons {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .btn {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    #submitButton {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .material-icons {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    #directions-dump {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    #largecol {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    #map {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .page-footer {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+    .container {
+        min-width: 1025%;
+        max-width: 1280%;
+    }
+}
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768% to 1024%
+  */
+@media (min-width: 768%) and (max-width: 1024%) {
+    .nav-wrapper {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .fas {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    h3 {
+        min-width: 1281%;
+        max-width: 1024%;
+    }
+    .row {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    #smallcol {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .container1 {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .input-field {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    #address {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .label-icon {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .material-icons {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .btn {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    #submitButton {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .material-icons {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    #directions-dump {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    #largecol {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    #map {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .page-footer {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+    .container {
+        min-width: 768%;
+        max-width: 1024%;
+    }
+}
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768% to 1024%
+  */
+@media (min-width: 768%) and (max-width: 1024%) and (orientation: landscape) {
+    .nav-wrapper {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .fas {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    h3 {
+        min-width: 1281%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .row {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    #smallcol {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .container1 {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .input-field {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    #address {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .label-icon {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .material-icons {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .btn {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    #submitButton {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .material-icons {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    #directions-dump {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    #largecol {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    #map {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .page-footer {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+    .container {
+        min-width: 768%;
+        max-width: 1024%;
+        orientation: landscape;
+    }
+}
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481% to 767%
+  */
+@media (min-width: 481%) and (max-width: 767%) {
+    .nav-wrapper {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .fas {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    h3 {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .row {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    #smallcol {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .container1 {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .input-field {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    #address {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .label-icon {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .material-icons {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .btn {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    #submitButton {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .material-icons {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    #directions-dump {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    #largecol {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    #map {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .page-footer {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    .container {
+        min-width: 481%;
+        max-width: 767%;
+    }
+    /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320% to 479px
+  */
+    @media (min-width: 320%) and (max-width: 480%) {
+        .nav-wrapper {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .fas {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        h3 {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .row {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        #smallcol {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .container1 {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .input-field {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        #address {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .label-icon {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .material-icons {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .btn {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        #submitButton {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .material-icons {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        #directions-dump {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        #largecol {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        #map {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .page-footer {
+            min-width: 320%;
+            max-width: 480%;
+        }
+        .container {
+            min-width: 320%;
+            max-width: 480%;
+        }
+    }
+    /* ----------- iPad Pro ----------- /
+/ Portrait and Landscape */
+    @media only screen and (min-width: 1024%) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+        .nav-wrapper {
+            min-width: 1024%;
+            max-width: 1366px;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .fas {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+        h3 {
+            min-width: 1281%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .row {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #smallcol {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .container1 {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .input-field {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #address {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .label-icon {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .material-icons {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .btn {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #submitButton {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .material-icons {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #directions-dump {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #largecol {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #map {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .page-footer {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .container {
+            min-width: 768%;
+            max-width: 1024%;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    }
+    /* Portrait */
+    @media only screen and (min-width: 1024%) and (max-height: 1366px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1.5) {
+        .nav-wrapper {
+            min-width: 1024%;
+            max-width: 1366px;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .fas {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+        h3 {
+            min-width: 1281%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .row {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #smallcol {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .container1 {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .input-field {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #address {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .label-icon {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .material-icons {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .btn {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #submitButton {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .material-icons {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #directions-dump {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #largecol {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #map {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .page-footer {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .container {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: portrait;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    }
+    /* Landscape */
+    @media only screen and (min-width: 1024%) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
+        .nav-wrapper {
+            min-width: 1024%;
+            max-width: 1366px;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .fas {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+        h3 {
+            min-width: 1281%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .row {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #smallcol {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .container1 {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .input-field {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #address {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .label-icon {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .material-icons {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .btn {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #submitButton {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .material-icons {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #directions-dump {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #largecol {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        #map {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .page-footer {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    
+        .container {
+            min-width: 768%;
+            max-width: 1024%;
+            orientation: landscape;
+            -webkit-min-device-pixel-ratio: 1.5;
+        }
+    }

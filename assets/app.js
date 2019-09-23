@@ -82,6 +82,64 @@ $(document).ready(function () {
         }
     }
 
+    $("#backButton").on("click", function (event) {
+        event.preventDefault();
+        // address = $("#address").val().trim();
+        console.log(address);
+
+        $("p").remove();
+
+        var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
+
+        $.ajax({
+            url: queryPlacesURL,
+            method: "GET"
+        }).then(function (response) {
+            let data = response.candidates[0];
+            console.log(data.geometry.location);
+            console.log(data.geometry.location.lat);
+            console.log(data.geometry.location.lng);
+            lat = data.geometry.location.lat;
+            lng = data.geometry.location.lng;
+
+            var queryParkingURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&radius=1000&types=parking";
+
+            $.ajax({
+                url: queryParkingURL,
+                method: "GET"
+            }).then(function (response) {
+                console.log(response);
+
+                let results = response.results;
+
+                for (let i = 0; i < results.length; i++) {
+
+                    let parkingPush = [results[i].name, results[i].geometry.location.lat, results[i].geometry.location.lng];
+
+                    parking.push(parkingPush);
+
+                    console.log(parkingPush[1], parkingPush[2]);
+
+                    let parkingLotOptions = [results[i].name, results[i]];
+                    let parkingOptions = $("<p>");
+                    //let button = $("<button/>");
+
+                    parkingOptions.attr("lat", parkingPush[1]);
+                    parkingOptions.attr("lng", parkingPush[2]);
+                    parkingOptions.attr("data-name", results[i].name)
+                    parkingOptions.addClass("directionsBtn")
+
+                    parkingOptions.append(parkingLotOptions);
+                    //parkingOptions.append(button);
+                    $(".container1").append(parkingOptions);
+
+                }
+
+                initParkingMap();
+            })
+        });
+    });
+
     $("#submitButton").on("click", function (event) {
         event.preventDefault();
         address = $("#address").val().trim();
@@ -129,6 +187,7 @@ $(document).ready(function () {
                     parkingOptions.addClass("directionsBtn")
 
                     parkingOptions.append(parkingLotOptions);
+
                     $(".container1").append(parkingOptions);
 
                 }
@@ -193,7 +252,6 @@ $(document).ready(function () {
         }).then(function (response) {
             console.log(response);
 
-
             $("p").empty();
 
             let steps = response.routes[0].legs[0].steps
@@ -224,3 +282,4 @@ $(document).ready(function () {
 // Set the lat and long into variables
 // take that information and do another ajax call
 // Take that info and plug in into another ajax call for api/maps
+

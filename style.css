@@ -2,6 +2,7 @@ nav {
     background-color: rgb(28, 46, 82);
     font-family: 'Abril Fatface', cursive;
     height: 10vh;
+    width: 100%;
 }
 
 #address {
@@ -123,7 +124,7 @@ h3 {
   ##Device = Desktops
   ##Screen = 1281px to higher resolution desktops
 */
-@media (min-width: 1281px) {
+/* @media (min-width: 1281px) {
     .nav-wrapper {
         min-width: 1281px;
     }
@@ -178,7 +179,7 @@ h3 {
     .container {
         min-width: 1281px;
     }
-}
+} */
 /* 
     ##Device = Laptops, Desktops
     ##Screen = B/w 1025px to 1280px
@@ -189,7 +190,6 @@ h3 {
         max-width: 1280px;
     }
     .fas {
-        min-width: 1025px;
         max-width: 1280px;
     }
     h3 {
@@ -267,7 +267,6 @@ h3 {
         max-width: 1024px;
     }
     .fas {
-        min-width: 768px;
         max-width: 1024px;
     }
     h3 {
@@ -346,7 +345,6 @@ h3 {
         orientation: landscape;
     }
     .fas {
-        min-width: 768px;
         max-width: 1024px;
         orientation: landscape;
     }
@@ -441,7 +439,6 @@ h3 {
         max-width: 767px;
     }
     .fas {
-        min-width: 481px;
         max-width: 767px;
     }
     h3 {
@@ -518,7 +515,6 @@ h3 {
             max-width: 480px;
         }
         .fas {
-            min-width: 320px;
             max-width: 480px;
         }
         h3 {
@@ -596,7 +592,6 @@ h3 {
         }
     
         .fas {
-            min-width: 768px;
             max-width: 1024px;
             -webkit-min-device-pixel-ratio: 1.5;
         }
@@ -706,7 +701,6 @@ h3 {
         }
     
         .fas {
-            min-width: 768px;
             max-width: 1024px;
             orientation: portrait;
             -webkit-min-device-pixel-ratio: 1.5;
@@ -833,7 +827,6 @@ h3 {
         }
     
         .fas {
-            min-width: 768px;
             max-width: 1024px;
             orientation: landscape;
             -webkit-min-device-pixel-ratio: 1.5;
@@ -949,4 +942,4 @@ h3 {
             orientation: landscape;
             -webkit-min-device-pixel-ratio: 1.5;
         }
-    }
+    }};

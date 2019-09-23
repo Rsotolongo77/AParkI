@@ -199,7 +199,7 @@ $(document).ready(function() {
         }).then(function(response) {
             console.log(response);
 
-            $(".container1").empty("<p>");
+            $("p").remove();
 
             let steps = response.routes[0].legs[0].steps
 

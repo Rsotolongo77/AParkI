@@ -35,7 +35,7 @@ nav {
 
 p {
     margin-top: 15px;
-    margin-left: 15px;
+    margin-left: 25px;
     margin-bottom: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bold;
@@ -57,13 +57,13 @@ p {
 }
 
 #submitButton {
-    /*float: right;*/
+    float: right;
     border-radius: 10px;
     width: 136px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-right: 15px;
     margin-left: 60px;
-    margin-top: -15%;
+    margin-top: -40px;
     background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
     linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
     linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);
@@ -75,12 +75,13 @@ p {
 }
 
 #backButton {
+    float: left;
     border-radius: 10px;
     width: 136px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-left: 15px;
     margin-right: 40px;
-    margin-top: -15%;
+    margin-top: -40px;
     background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
     linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
     linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);

@@ -24,10 +24,10 @@ Click on the parking stucture and you will be given directions to the parking st
 * Directions are displayed on an easy to use GIU
 
 Authors:
-  - Eddie Allard
-  - Ricky Sotolongo
-  - Chad Kaplan
-  - Sid Hicks
+  - [Eddie Allard](https://github.com/Rsotolongo77)
+  - [Ricky Sotolongo](https://github.com/Rsotolongo77)
+  - [Chad Kaplan](https://github.com/Chadkaplan)
+  - [Sid Hicks](https://sidh80.github.io/)
 
   ## Technologies Used
 

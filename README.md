@@ -24,7 +24,7 @@ Click on the parking stucture and you will be given directions to the parking st
 * Directions are displayed on an easy to use GIU
 
 Authors:
-  - [Eddie Allard](https://github.com/Rsotolongo77)
+  - [Eddie Allard](Https://www.theallardompany.com)
   - [Ricky Sotolongo](https://github.com/Rsotolongo77)
   - [Chad Kaplan](https://github.com/Chadkaplan)
   - [Sid Hicks](https://sidh80.github.io/)

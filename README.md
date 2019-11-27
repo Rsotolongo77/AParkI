@@ -1,10 +1,10 @@
 # apARKi
 
-## apARKi is an assistant that helps you find parking spaces.
+## apARKi is an assistant that helps you find parking a space.
 
  ## [apARKi Deployed Version Click here](https://sidh80.github.io/apARKi/)
 
-apARKi uses Google Maps API to find youR location
+apARKi uses Google Maps API to find your location
 
  ![Screen Shot 2019-10-09 at 8 22 19 PM](https://user-images.githubusercontent.com/51130585/69683005-4e609700-1081-11ea-983c-edc692bfa60f.png)
 
@@ -24,10 +24,10 @@ Click on the parking stucture and you will be given directions to the parking st
 * Directions are displayed on an easy to use GIU
 
 Authors:
-  - Eddie Allard
-  - Ricky Sotolongo
-  - Chad Kaplan
-  - Sid Hicks
+  - [Eddie Allard](https://github.com/Rsotolongo77)
+  - [Ricky Sotolongo](https://github.com/Rsotolongo77)
+  - [Chad Kaplan](https://github.com/Chadkaplan)
+  - [Sid Hicks](https://sidh80.github.io/)
 
   ## Technologies Used
 

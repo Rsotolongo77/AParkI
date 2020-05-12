@@ -1,93 +1,67 @@
 nav {
     background-color: rgb(28, 46, 82);
     font-family: 'Abril Fatface', cursive;
-    height: 10vh;
+    height: 7vh;
+}
+
+.row {
+    margin: 0;
 }
 
 #address {
     border-radius: 10px;
-    border: 3px solid black;
-    width: 395px;
-    height: 50px;
-    margin-left: 0px;
-    bottom: -10px;
-    margin-bottom: 60px;
+    margin: auto;
     text-align: center;
     font-size: medium;
     font-family: 'Merriweather', serif;
-}
-
-::-webkit-input-placeholder {
-    color: rgb(207, 199, 199);;
-}
-
-::-moz-placeholder {
-    color: rgb(207, 199, 199);;
-}
-
-:-ms-input-placeholder {
-    color: rgb(207, 199, 199);;
-}
-
-:-moz-placeholder {
-    color: rgb(207, 199, 199);;
+    background: radial-gradient(circle, #cad5fa 0%, #d2f7f8 100%);
+    width: 90%;
 }
 
 p {
-    margin-top: 15px;
+    margin-top: 2rem;
     margin-left: 25px;
     margin-bottom: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-weight: bold;
 }
 
 #mag {
-    margin-left: 5px;
-    margin-top: 15px;
+    margin-left: 2rem;
+    margin-top: .5rem;
     color: black;
 }
 
-.input-field {
-    bottom: -10px;
-    background: radial-gradient(circle, #453ddf 0%, #1d999b 100%);
-    border-radius: 10px;
-    width: 400px;
-    margin-left: 15px;
-    color: black;
+::placeholder {
+    color: rgb(77, 77, 77);
+}
+
+#address:focus {
+    background: rgb(153, 153, 153);
+    color: white;
 }
 
 #submitButton {
     float: right;
+    margin: 0.5rem 2rem;
     border-radius: 10px;
-    width: 136px;
-    margin-bottom: 20px;
-    margin-right: 15px;
-    margin-left: 60px;
-    margin-top: -40px;
-    background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
-    linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
-    linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);
-    background-blend-mode: screen;
-    border: 2px solid black;
-    color: white;
+    width: 25%;
+    background: lightgrey;
+    color: rgb(77, 77, 77);
     font-family: 'Abril Fatface', cursive;
 
 }
 
+#inverted-icon {
+    transform: scaleX(-1);
+}
+
 #backButton {
     float: left;
+    margin: 0.5rem 2rem;
     border-radius: 10px;
-    width: 136px;
-    margin-bottom: 20px;
-    margin-left: 15px;
-    margin-right: 40px;
-    margin-top: -40px;
-    background:linear-gradient(rgba(160, 119, 105, 0.822), transparent),
-    linear-gradient(to top left, rgba(138, 173, 173, 0.507),transparent),
-    linear-gradient(to top right, rgba(46, 46, 85, 0.842), transparent);
-    background-blend-mode: screen;
-    border: 2px solid black;
-    color: white;
+    width: 25%;
+    background: lightgrey;
+    color: rgb(77, 77, 77);
     font-family: 'Abril Fatface', cursive;
 }
 
@@ -105,28 +79,28 @@ h3 {
 }
 
 .container1 {
-    border: 2px solid rgb(42, 42, 43);
+    border: 1px solid rgb(85, 85, 85);
     background-color: rgb(224, 224, 214);
-    height: 81vh;
-    margin-top: 5px;
+    height: 95vh;
+    margin: 1.5rem 1rem;
     border-radius: 10px;
     padding: 12px;
     overflow: auto;
 }
 
 #smallcol {
-    height: 90vh;
-    background: linear-gradient( rgb(98, 159, 167), rgb(172, 134, 172));
+    height: 100vh;
+    background: linear-gradient( rgb(163, 214, 223), rgb(149, 151, 235));
 }
 
 #largecol {
-    height: 85vh;
+    height: 100vh;
     background-color: white;
     padding: 0;
 }
 
 #map {
-    height: 86vh;
+    height: 100vh;
     width: 100%;
 }
 
@@ -139,10 +113,6 @@ h3 {
 .directionsBtn:hover {
     cursor: pointer;
     background-color: rgb(197, 197, 197);
-    /*border-bottom: 1px solid rgb(0, 0, 0);*/
     border-radius: 5px;
 }
 
-/*.directionsBtn {
-    border-bottom: 1px solid black;
-}

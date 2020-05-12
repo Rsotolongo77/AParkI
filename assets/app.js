@@ -8,7 +8,7 @@ $(document).ready(function () {
     let parking = [];
 
     // Function to initilize the map to the screen
-    function initMap() {
+    window.initMap = function () {
         map = new google.maps.Map(document.getElementById('map'), {
             // Initial starting location is University of Central Florida
             center: {
@@ -89,7 +89,7 @@ $(document).ready(function () {
 
         $("p").remove();
 
-        var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
+        var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyBlnW3x8zkq0nzwohW5aM_4tNizS50pAIU&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 
         $.ajax({
             url: queryPlacesURL,
@@ -102,7 +102,7 @@ $(document).ready(function () {
             lat = data.geometry.location.lat;
             lng = data.geometry.location.lng;
 
-            var queryParkingURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&radius=1000&types=parking";
+            var queryParkingURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&key=AIzaSyBlnW3x8zkq0nzwohW5aM_4tNizS50pAIU&radius=1000&types=parking";
 
             $.ajax({
                 url: queryParkingURL,
@@ -147,7 +147,7 @@ $(document).ready(function () {
 
         $("p").remove();
 
-        var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
+        var queryPlacesURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?key=AIzaSyBlnW3x8zkq0nzwohW5aM_4tNizS50pAIU&input=" + address + "&inputtype=textquery&fields=name,geometry,formatted_address,icon";
 
         $.ajax({
             url: queryPlacesURL,
@@ -160,7 +160,7 @@ $(document).ready(function () {
             lat = data.geometry.location.lat;
             lng = data.geometry.location.lng;
 
-            var queryParkingURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE&radius=1000&types=parking";
+            var queryParkingURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + lng + "&key=AIzaSyBlnW3x8zkq0nzwohW5aM_4tNizS50pAIU&radius=1000&types=parking";
 
             $.ajax({
                 url: queryParkingURL,
@@ -196,7 +196,7 @@ $(document).ready(function () {
             })
             //inside the 1st then
 
-            var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + "," + userLongitude + "&destination=" + address + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
+            var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + "," + userLongitude + "&destination=" + address + "&key=AIzaSyBlnW3x8zkq0nzwohW5aM_4tNizS50pAIU";
 
             $.ajax({
                 url: queryDirectionsURL,
@@ -247,7 +247,7 @@ $(document).ready(function () {
 
         console.log(parkingName);
 
-        var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + "," + userLongitude + "&destination=" + parkingLat + "," + parkingLng + "&key=AIzaSyAl_dAteSxbSnf4wX8cFpQYhpP9dZN35TE";
+        var queryDirectionsURL = "https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/directions/json?origin=" + userLatitude + "," + userLongitude + "&destination=" + parkingLat + "," + parkingLng + "&key=AIzaSyBlnW3x8zkq0nzwohW5aM_4tNizS50pAIU";
 
         $.ajax({
             url: queryDirectionsURL,
